@@ -8,6 +8,12 @@ public class User {
     public User() {
     }
 
+    public User(String name, Integer age, String addr) {
+        this.name = name;
+        this.age = age;
+        this.addr = addr;
+    }
+
     public String getName() {
         return name;
     }

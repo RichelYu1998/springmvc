@@ -12,5 +12,8 @@
 </head>
 <body>
     <h1>Hello</h1>
+    ${user.name}
+    ${user.age}
+    ${user.addr}
 </body>
 </html>

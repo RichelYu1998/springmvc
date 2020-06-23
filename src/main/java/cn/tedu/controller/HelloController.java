@@ -12,13 +12,16 @@ package cn.tedu.controller;
 import cn.tedu.pojo.User;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.ServletRequestDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 /*
  *  @@Controller作用1：标识当前类属于Controller层
@@ -141,5 +144,30 @@ public class HelloController {
         System.out.println("user="+user);
         System.out.println("like数组="+ Arrays.toString(like));
         return "test";
+    }
+    /*
+    * 8.测试model响应数据
+    * */
+    @RequestMapping("/testModel01")
+    public String testModel01(Model model){
+        User u1 = new User("王五", 20, "北京");//request.setAttribute(name,age,addr)
+        //将User对象存入Model中
+        model.addAttribute("user",u1);
+        return "home";
+    }
+    /*
+     * 8.测试model响应数据
+     * */
+    @RequestMapping("/testModel02")
+    public String testModel02(Model model){
+        List<User> list = new ArrayList();
+        User u1 = new User("王五", 20, "北京");
+        User u2 = new User("王五", 20, "北京");
+        User u3 = new User("王五", 20, "北京");
+        list.add(u1);
+        list.add(u2);
+        list.add(u3);
+        model.addAttribute("list",list);
+        return "home";
     }
 }

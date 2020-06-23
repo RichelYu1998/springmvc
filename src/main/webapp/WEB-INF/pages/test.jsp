@@ -12,5 +12,8 @@
 </head>
 <body>
     <h1>Test</h1>
+${list[0].name},${list[0].age},${list[0].addr}<br/>
+${list[1].name},${list[1].age},${list[1].addr}<br/>
+${list[2].name},${list[2].age},${list[2].addr}<br/>
 </body>
 </html>
