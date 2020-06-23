@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 
 /*
@@ -132,5 +133,13 @@ public class HelloController {
         System.out.println("testRedirect方法执行了");
         return "redirect:test";
     }
-
+/*
+* 7.POST提交中文参数
+* */
+    @RequestMapping("/testParam05")
+    public String testParam05(String user,String[] like){
+        System.out.println("user="+user);
+        System.out.println("like数组="+ Arrays.toString(like));
+        return "test";
+    }
 }
