@@ -98,4 +98,22 @@ public class HelloController {
             System.out.println("date="+date);
             return "test";
         }
+        /*
+        * 5.测试springmvc实现请求转发
+        *  （1）在springmvc中，从controller跳转到jsp,默认就是请求转发
+        * 需要通过转发才可以访问WEB-INF目录下的资源
+        * 从controller跳转到jsp，地址栏没变化
+        * （2）如果是controller中的方法，转发到另一个方法
+        * */
+    @RequestMapping("/testForward")
+    public String testForward(){
+        System.out.println("testForward方法执行了");
+        //从当前方法转发到/toPage
+        return "forward:/toPage";
+    }
+    @RequestMapping("/toPage")
+    public String toPage(){
+        System.out.println("toPage方法执行了");
+        return "test";
+    }
 }
