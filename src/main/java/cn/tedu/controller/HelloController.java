@@ -10,8 +10,12 @@ package cn.tedu.controller;
      * */
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+    /*
+      *  @@Controller作用1：标识当前类属于Controller层
+       * 如果Controller类上没有访问路径，当前方法上的访问路径在所有Controller类中不可以重复
+    * */
 @Controller
+//@RequestMapping("hc")
 public class HelloController {
     /*
     * @RequestMapping注解：为当前发方法绑定一个请求路径，
@@ -23,4 +27,19 @@ public class HelloController {
         //从当前controller可以跳转到某个jsp，这里的return的是jsp名字
         return "home";
     }
+    /*
+    * 1.测试springmvc的参数绑定--简单的类型绑定
+    * http://localhost:8080/springmvc
+    * /testParam01?name=张飞&age=2&addr=河北
+    * 如何获取请求中name、age、addr的值
+    * 可以在方法上声明形参。
+    * 要求：形参的名字和请求的名字保持一致
+      * */
+        @RequestMapping("/testParam01")
+        public String testParam01(String name,Integer age,String addr){
+            System.out.println("name="+name);
+            System.out.println("age="+age);
+            System.out.println("addr="+addr);
+            return "home";
+        }
 }
