@@ -45,7 +45,7 @@ public class HelloController {
         /*
          * 2.测试springmvc的参数绑定--简单的类型绑定
          * http://localhost:8080/springmvc
-         * /testParam02?username=张飞&age=2&addr=河北
+         * /testParam02?username=刘备&psw=123&addr=荆州&age=20
          * 如何获取请求中name、age、addr的值
          * */
         @RequestMapping("testParam02")
