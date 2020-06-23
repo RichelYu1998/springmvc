@@ -42,4 +42,18 @@ public class HelloController {
             System.out.println("addr="+addr);
             return "home";
         }
+        /*
+         * 2.测试springmvc的参数绑定--简单的类型绑定
+         * http://localhost:8080/springmvc
+         * /testParam02?username=张飞&age=2&addr=河北
+         * 如何获取请求中name、age、addr的值
+         * */
+        @RequestMapping("testParam02")
+        public String testParam02(String username,String psw,String addr,Integer age){
+            System.out.println("username="+username);
+            System.out.println("psw="+psw);
+            System.out.println("addr="+addr);
+            System.out.println("age="+age);
+            return "test";
+        }
 }
